@@ -1,0 +1,39 @@
+nvm install
+
+NEST
+npm i -g @nestjs/cli
+
+CREATE NEW PROJECT
+nest new "name"
+
+CREATE MODEL
+nest g class "Nombre clase" model --flat
+
+CREATE SERVICE
+nest g service "nombre servicio" services --flat
+DUMMY MODEL PARA VER ENDPOINT
+export class CocktailsService {
+    getCocktails(): Cocktail[]{
+        return [{nombre: "Margarita", esAlcohol: true, tipoVaso: "Vino"}]
+    }
+}
+
+APP CONTROLLER GET ROUTE
+  @Get("/personajes")
+  GetCocktails(): Cocktail[] {
+    return this.cocktailService.getCocktails();
+  }
+
+
+crear .env ; ENDPOINT_URL=url
+
+instalar config nest: npm i --save @nestjs/config
+
+app.module = agregar a import [configmodule.forroot();]
+
+install axios
+
+npm i --save axios
+
+para inyectar autowired se hace un constructor al service
+constructor(private readonly configService:configService);
